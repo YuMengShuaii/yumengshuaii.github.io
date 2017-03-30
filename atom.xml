@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>YuMengShuai&#39;s Blog</title>
+  
+  <link href="/yumengshuaii.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://yumengshuaii.github.io/"/>
+  <updated>2017-03-30T06:07:20.000Z</updated>
+  <id>https://yumengshuaii.github.io/</id>
+  
+  <author>
+    <name>YuMengShuai</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android继承友盟推送</title>
+    <link href="https://yumengshuaii.github.io/2017/03/30/5/"/>
+    <id>https://yumengshuaii.github.io/2017/03/30/5/</id>
+    <published>2017-03-30T04:46:36.000Z</published>
+    <updated>2017-03-30T06:07:20.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;引言&lt;/strong&gt;&lt;br&gt;&lt;code&gt;友盟+发布的sdk总体来说质量都挺好，以社会化分享来说，易于集成，代码可读性高，文档条理清晰，本文详细介绍关于友盟推Android端集成。&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;上友盟官网申请友盟账号，下来友盟U-
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://yumengshuaii.github.io/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LoadRunner常用技巧</title>
+    <link href="https://yumengshuaii.github.io/2017/03/27/1/"/>
+    <id>https://yumengshuaii.github.io/2017/03/27/1/</id>
+    <published>2017-03-27T07:30:46.000Z</published>
+    <updated>2017-03-27T08:52:26.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;脚本&quot;&gt;&lt;a href=&quot;#脚本&quot; class=&quot;headerlink&quot; title=&quot;脚本&quot;&gt;&lt;/a&gt;脚本&lt;/h3&gt;&lt;p&gt;&lt;code&gt;在录制脚本中，采用Loadrunner而自动录制脚本难免会录入一切不必要的数据，如果直接采用这个样的脚本进行压测的话，测试结果会
+    
+    </summary>
+    
+    
+      <category term="LoadRunner" scheme="https://yumengshuaii.github.io/tags/LoadRunner/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LoadRunner设置集结点的方法及原理</title>
+    <link href="https://yumengshuaii.github.io/2017/03/27/2/"/>
+    <id>https://yumengshuaii.github.io/2017/03/27/2/</id>
+    <published>2017-03-27T05:32:52.000Z</published>
+    <updated>2017-03-27T07:47:32.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;集结点的作用&quot;&gt;&lt;a href=&quot;#集结点的作用&quot; class=&quot;headerlink&quot; title=&quot;集结点的作用&quot;&gt;&lt;/a&gt;集结点的作用&lt;/h3&gt;&lt;p&gt;&lt;code&gt;一般是在测试并发时，线程与进程也跟人一样，有强有弱，有的占用资源多，有的占用资源少，所以这种情况
+    
+    </summary>
+    
+    
+      <category term="LoadRunner" scheme="https://yumengshuaii.github.io/tags/LoadRunner/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LoadRunner压测Get方法</title>
+    <link href="https://yumengshuaii.github.io/2017/03/27/3/"/>
+    <id>https://yumengshuaii.github.io/2017/03/27/3/</id>
+    <published>2017-03-27T03:21:54.000Z</published>
+    <updated>2017-03-27T06:47:09.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;首先LoadRunner本身具有很多方法均可测试接口，今天我们使用web_custom_request方法进行Get接口测试。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;int nHttpRetCode;//设置http请求code  
+web_set_max_htm
+    
+    </summary>
+    
+    
+      <category term="LoadRunner" scheme="https://yumengshuaii.github.io/tags/LoadRunner/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WebView加载本地无Css的Html出现图片不匹配</title>
+    <link href="https://yumengshuaii.github.io/2017/03/27/4/"/>
+    <id>https://yumengshuaii.github.io/2017/03/27/4/</id>
+    <published>2017-03-27T03:21:54.000Z</published>
+    <updated>2017-03-28T05:59:42.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;引言&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;在Android开发的过程中,有事会遇到这样一种需求，尤其是在图文混排的情况下，有些人会采用直接使用html标签来实现效果，但是，在图片自适应的处理上总是不尽人意，本文针对这种情况下的图片
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://yumengshuaii.github.io/tags/Android/"/>
+    
+  </entry>
+  
+</feed>
