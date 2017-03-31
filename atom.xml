@@ -5,7 +5,7 @@
   <link href="/yumengshuaii.github.io/atom.xml" rel="self"/>
   
   <link href="https://yumengshuaii.github.io/"/>
-  <updated>2017-03-30T06:07:20.000Z</updated>
+  <updated>2017-03-31T05:53:59.000Z</updated>
   <id>https://yumengshuaii.github.io/</id>
   
   <author>
@@ -16,11 +16,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Android继承友盟推送</title>
+    <title>基于Retrofit,RxJava,RxAndroid,OkHttp3,Gson网络请求框架封装</title>
+    <link href="https://yumengshuaii.github.io/2017/03/31/6/"/>
+    <id>https://yumengshuaii.github.io/2017/03/31/6/</id>
+    <published>2017-03-31T02:07:39.000Z</published>
+    <updated>2017-03-31T05:53:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##拦截器（Interceptor）&lt;/p&gt;
+&lt;p&gt;####维护Cookies&lt;/p&gt;
+&lt;p&gt;#####本地存储Cookies（ReceivedInterceptor）&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td c
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://yumengshuaii.github.io/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android集成友盟推送</title>
     <link href="https://yumengshuaii.github.io/2017/03/30/5/"/>
     <id>https://yumengshuaii.github.io/2017/03/30/5/</id>
     <published>2017-03-30T04:46:36.000Z</published>
-    <updated>2017-03-30T06:07:20.000Z</updated>
+    <updated>2017-03-31T03:59:21.000Z</updated>
     
     <summary type="html">
     
