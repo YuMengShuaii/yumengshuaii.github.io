@@ -425,6 +425,261 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://yumengshuaii.github.io/yumengshuaii.github.io/2017/03/31/9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YuMengShuai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://onghqryqs.bkt.clouddn.com/image/jpgQQ20170327-124843.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YuMengShuai's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/yumengshuaii.github.io/2017/03/31/9/" itemprop="url">
+                  Dagger
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-31T16:19:57+08:00">
+                2017-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Dagger"><a href="#Dagger" class="headerlink" title="Dagger"></a>Dagger</h1><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">project的 build.gradel 中dependencies下添加以下依赖</div><div class="line">//Dagger依赖apt</div><div class="line">classpath&apos;com.neenbedankt.gradle.plugins:android-apt:1.8&apos;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">主module build.gradel的dependencies中添加以来以来</div><div class="line">//Dagger依赖</div><div class="line">compile &apos;com.google.dagger:dagger:2.4&apos;</div><div class="line">apt &apos;com.google.dagger:dagger-compiler:2.4&apos;</div><div class="line">//================================================</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">主module中添加以下 apply plugin</div><div class="line">apply plugin: &apos;com.neenbedankt.android-apt&apos;</div></pre></td></tr></table></figure>
+<h2 id="编写Component"><a href="#编写Component" class="headerlink" title="编写Component"></a>编写Component</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">在你需要注解的对象上加入如下注解</div><div class="line"> @Inject</div><div class="line">    protected T presenter;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">正式编写Commponent</div><div class="line">//单例注解</div><div class="line">@Singleton</div><div class="line">//Commponent注解</div><div class="line">@Component()</div><div class="line">public interface AppComponent &#123;</div><div class="line">    //注入入口 变量名可以随便起 但是参数一定要是 注入入口的 activity或者fragment 方法名建议用inject</div><div class="line">    void inject(fragment fragment);</div><div class="line"></div><div class="line">    void inject(ListActivity activity);</div><div class="line"></div><div class="line">    void inject(MainActivity activity);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h2><blockquote>
+<p>首先make project 使其生成 Dagger对应的类 DaggerAppComponent 初始化注入一般在oncreate中 Fragment中一般在onCreateView方法中</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DaggerAppComponent.builder().build().inject(this);</div></pre></td></tr></table></figure>
+<h1 id="组件依赖"><a href="#组件依赖" class="headerlink" title="组件依赖"></a>组件依赖</h1><h2 id="撰写Module"><a href="#撰写Module" class="headerlink" title="撰写Module"></a>撰写Module</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">@Module</div><div class="line">public class MainModule &#123;</div><div class="line">    </div><div class="line">    private Class&lt;apiservice&gt; s;</div><div class="line">    private String BaseUrl;</div><div class="line">    public MainModule(Class&lt;apiservice&gt; s,String BaseUrl) &#123;</div><div class="line">        this.BaseUrl = BaseUrl;</div><div class="line">        this.s = s;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //在出现相同类型返回值方法时，加上Named注解用来区分参数</div><div class="line">    @Named(&quot;BaseConext&quot;)</div><div class="line">    @Provides</div><div class="line">    public Context provideContext() &#123;</div><div class="line">        return FrameInit.Mcontext;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    @Named(&quot;Application&quot;)</div><div class="line">    @Provides</div><div class="line">    public Context provideApplication() &#123;</div><div class="line">        return FrameInit.Mcontext.getApplicationContext();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    @Provides</div><div class="line">    public String provideCacheFillDir() &#123;</div><div class="line">        return FrameInit.Mcontext.getApplicationContext().getExternalCacheDir().getAbsolutePath();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Provides</div><div class="line">    public SharedPreferences provideSp() &#123;</div><div class="line">        return FrameInit.Mcontext.getApplicationContext().getSharedPreferences(&quot;MainCache&quot;, Context.MODE_PRIVATE);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Provides</div><div class="line">    public apiservice provideApi() &#123;</div><div class="line">        return  NetServiceFactory.getInstance().createService(s,BaseUrl);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="撰写组件Component"><a href="#撰写组件Component" class="headerlink" title="撰写组件Component"></a>撰写组件Component</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@Component(modules = &#123;MainModule.class&#125;)</div><div class="line">public interface ApplicationComponent &#123;</div><div class="line">    apiservice provideApi();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="撰写主Component"><a href="#撰写主Component" class="headerlink" title="撰写主Component"></a>撰写主Component</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@Component(dependencies = ApplicationComponent.class)</div><div class="line">public interface AppComponent &#123;</div><div class="line">    void inject(fragment fragment);</div><div class="line"></div><div class="line">    void inject(ListActivity activity);</div><div class="line"></div><div class="line">    void inject(MainActivity activity);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="在Application中提供生成组件Component方法"><a href="#在Application中提供生成组件Component方法" class="headerlink" title="在Application中提供生成组件Component方法"></a>在Application中提供生成组件Component方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//在oncreate方法中</div><div class="line">component = DaggerApplicationComponent.builder().mainModule(new MainModule(apiservice.class,&quot;http://yumengshuai.cn/&quot;)).build();</div><div class="line"></div><div class="line"> public ApplicationComponent getApiComment()&#123;</div><div class="line">        return component;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="编译-调用"><a href="#编译-调用" class="headerlink" title="编译 调用"></a>编译 调用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DaggerAppComponent.builder().applicationComponent(((App)activity.getApplication()).getApiComment()).build().inject(this);</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://yumengshuaii.github.io/yumengshuaii.github.io/2017/03/31/8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YuMengShuai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://onghqryqs.bkt.clouddn.com/image/jpgQQ20170327-124843.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YuMengShuai's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/yumengshuaii.github.io/2017/03/31/8/" itemprop="url">
+                  Android利用注解限定同类型传参
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-31T16:19:57+08:00">
+                2017-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Android利用注解限定同类型传参"><a href="#Android利用注解限定同类型传参" class="headerlink" title="Android利用注解限定同类型传参"></a>Android利用注解限定同类型传参</h1><h2 id="使用注解可实现"><a href="#使用注解可实现" class="headerlink" title="使用注解可实现"></a>使用注解可实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public class PickerType &#123;</div><div class="line"></div><div class="line">    public static final int First = 0;</div><div class="line">    public static final int Second = 1;</div><div class="line">    public static final int Third = 2;</div><div class="line">    public static final int Fourth = 3;</div><div class="line"></div><div class="line">//TypeDef注解使用了@interface来声明新的枚举注解类型。其中@IntDef和@StringDef注解以及@Retention标注了新的注解，目的是定义这个枚举类型。而</div><div class="line">@IntDef(&#123;First, Second, Third, Fourth&#125;)</div><div class="line">@Retentino(RententionPolicy.SOURCE)注解告诉编译器在生成.class文件时不保留枚举注解数据。</div><div class="line">@Retention(RetentionPolicy.SOURCE)</div><div class="line">    public @interface Type &#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://yumengshuaii.github.io/yumengshuaii.github.io/2017/03/31/6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1410,7 +1665,7 @@ else
           
             <div class="site-state-item site-state-posts">
               <a href="/yumengshuaii.github.io/archives">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

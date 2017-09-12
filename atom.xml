@@ -34,6 +34,42 @@
   </entry>
   
   <entry>
+    <title>Dagger</title>
+    <link href="https://yumengshuaii.github.io/2017/03/31/9/"/>
+    <id>https://yumengshuaii.github.io/2017/03/31/9/</id>
+    <published>2017-03-31T08:19:57.000Z</published>
+    <updated>2017-09-12T04:18:26.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Dagger&quot;&gt;&lt;a href=&quot;#Dagger&quot; class=&quot;headerlink&quot; title=&quot;Dagger&quot;&gt;&lt;/a&gt;Dagger&lt;/h1&gt;&lt;h2 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://yumengshuaii.github.io/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android利用注解限定同类型传参</title>
+    <link href="https://yumengshuaii.github.io/2017/03/31/8/"/>
+    <id>https://yumengshuaii.github.io/2017/03/31/8/</id>
+    <published>2017-03-31T08:19:57.000Z</published>
+    <updated>2017-09-12T04:17:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Android利用注解限定同类型传参&quot;&gt;&lt;a href=&quot;#Android利用注解限定同类型传参&quot; class=&quot;headerlink&quot; title=&quot;Android利用注解限定同类型传参&quot;&gt;&lt;/a&gt;Android利用注解限定同类型传参&lt;/h1&gt;&lt;h2 id=&quot;使
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://yumengshuaii.github.io/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
     <title>基于Retrofit,RxJava,RxAndroid,OkHttp3,Gson网络请求框架封装</title>
     <link href="https://yumengshuaii.github.io/2017/03/31/6/"/>
     <id>https://yumengshuaii.github.io/2017/03/31/6/</id>
